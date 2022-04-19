@@ -68,6 +68,7 @@ heroku config
 ## Deploying
 
 After this configuration process is complete, you are finally ready to "deploy" the application's source code to the Heroku server:
+(Note: Make sure you have committed and pushed to Github before doing this for the first time.)
 
 ```sh
 git push heroku main
