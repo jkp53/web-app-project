@@ -1,6 +1,6 @@
 # web_app/routes/home_routes.py
 
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, redirect
 
 home_routes = Blueprint("home_routes", __name__)
 
@@ -22,12 +22,16 @@ def index():
 def reviewpage(location_id):
     print("You reached the review page...")
     print("You chose" + str(location_id))
-    return render_template("review.html")
+    return render_template("review2.html", location_id=location_id)
 
-@home_routes.route("/bootstraptest")
-def bootstraptest():
-    print("You reached the homepage...")
-    return render_template("bootstrap_5_layout.html")
+@home_routes.route("/reviewconfirmation", methods=["POST"])
+def confirm():
+    print("CREATE USER ORDER...")
+
+    form_data = dict(request.form)
+    print("FORM DATA:", form_data)
+    return redirect("/")
+
 
     # web_app/routes/home_routes.py
 

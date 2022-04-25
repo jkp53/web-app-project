@@ -1,0 +1,20 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "review" %}
+
+{% block content %}
+
+
+
+<form method="POST" action="/reviewconfirmation" style="display: inline;">
+    <label for="cars">Choose a car:</label>
+    <select name="cars" id="cars" form="carform">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    <input type="hidden" name="location_id" value="{{ location_id }}">
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>
+
+{% endblock %}
