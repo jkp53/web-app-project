@@ -22,6 +22,22 @@ def another():
     print("ANOTHER PAGE MAYBE...")
     return "Here is another page"
 
+@home_routes.route("/homepage")
+def homepage():
+    print("You reached the homepage...")
+    locations = [
+        {"location_id":"1", "location_name":"Five Spice", "location_hours":"hours test", "location_logo_url":"https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=999&image=999/Logos-bgTransparent_5Spice.png&w=900&h=508&r=1"},
+        {"location_id":"2", "location_name":"Olive Branch", "location_hours":"hours test", "location_logo_url":"https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=999&image=999/Logos-bgTransparent_OliveBranch.png&w=900&h=508&r=1"}
+        ]
+    print(type(locations))
+    return render_template("homepage.html", locations=locations)
+
+
+@home_routes.route("/bootstraptest")
+def bootstraptest():
+    print("You reached the homepage...")
+    return render_template("bootstrap_5_layout.html")
+
     # web_app/routes/home_routes.py
 
 # ...

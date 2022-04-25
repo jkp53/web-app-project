@@ -4,10 +4,17 @@
 # DEVELOPMENT / PRODUCTION
 #
 
+# reading environment vars:
 python-dotenv
 pgeocode
 pandas
 requests
 sendgrid==6.6.0
+
+# web application:
 flask
+# production web server (for heroku):
 gunicorn
+
+# auth (login with google via oauth):
+Authlib==1.0.0
