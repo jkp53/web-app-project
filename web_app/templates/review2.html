@@ -8,25 +8,24 @@
 <br>
 
 <form method="POST" action="/reviewconfirmation" style="display: inline;">
+    <input type="hidden" name="location_id" value="{{ location_id }}">
     <h3>
         <small class="text-muted">Taste Rating</small>
     </h3>
     <label for="taste_score">Select rating:</label>
-        <select name="taste_score" id="taste_score" form="tasteform">
+        <select name="taste_score" id="taste_score">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-    <input type="hidden" name="location_id" value="{{ location_id }}">
-
     <br>
     <h3>
         <small class="text-muted">Health Rating</small>
     </h3>
     <label for="healthscore">Select rating:</label>
-    <select name="healthscore" id="healthscore" form="healthform">
+    <select name="healthscore" id="healthscore">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -38,7 +37,7 @@
         <small class="text-muted">Service Rating</small>
     </h3>
     <label for="servicescore">Select rating:</label>
-    <select name="servicescore" id="servicescore" form="serviceform">
+    <select name="servicescore" id="servicescore">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -50,7 +49,7 @@
         <small class="text-muted">Portion Size</small>
     </h3>
     <label for="portionscore">Select rating:</label>
-    <select name="portionscore" id="portionscore" form="portionform">
+    <select name="portionscore" id="portionscore">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
