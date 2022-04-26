@@ -30,7 +30,9 @@ def reviewpage(location_id):
 def confirm():
     print("You submitted a review!")
     form_data = dict(request.form)
+    tastescore = request.form.get('taste_score')
     print("FORM DATA:", form_data)
+    print(str(tastescore))
     return render_template("confirmation.html")
 
 

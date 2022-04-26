@@ -1,11 +1,11 @@
 {% extends "bootstrap_5_layout.html" %}
 {% set active_page = "review" %}
 
+
 {% block content %}
 
 
 <h1>Review for {{location_id}} </h1>
-
 
 <br>
 
@@ -13,16 +13,16 @@
     <h3>
         <small class="text-muted">Taste Rating</small>
     </h3>
-    <label for="tastescore">Select rating:</label>
-    <select name="tastescore" id="tastescore" form="tasteform">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
+    <span class="input-group-addon">Select rating:</span>
+        <select name="taste_score" id="taste_score" form="tasteform" class="selectpicker form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
     <input type="hidden" name="location_id" value="{{ location_id }}">
-    <input type="hidden" name="taste_score" value="{{ taste_score}}">
+
     <br>
     <h3>
         <small class="text-muted">Health Rating</small>
@@ -61,9 +61,11 @@
     </select>
     <br>
     <div style="text-align: center">
-        <button type="submit" class="btn btn-primary">Submit review</button>
+        <input type="submit" value = "Submit review" class="btn btn-primary">
     </div>
 
 </form>
+
+
 
 {% endblock %}
