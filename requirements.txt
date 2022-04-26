@@ -18,3 +18,7 @@ gunicorn
 
 # auth (login with google via oauth):
 Authlib==1.0.0
+
+#enable google sheets reading and authentication
+gspread
+oauth2client

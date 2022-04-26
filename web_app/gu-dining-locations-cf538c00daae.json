@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "gu-dining-locations",
+    "private_key_id": "cf538c00daaea84766582c972348cbc6364eed4f",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDlnnKUmmljviIB\nmVj70OHAfcZ16hIgb9hCqU/VjkJiq/KYSkeoLurcN5OVBaE/1VnUykk5e58sPxL8\ns3VxYXqkSU8YJTjCv5FhoU1vfQe97hhrBB77XUToFTudAAJ042o6mvWimDsdHmsn\nbmsUoKImpruqjthl8xyUTEqAOAS8RdB6A+kBCG1n5u9aUy2MKm+2uo9gmazV1fSV\nJINuwc8Jx3q3JBcI8TJwx91I55Ch+XHWuI/FYTRC0tG8QL8uP9iMwFjYu5vMruTj\ns7TO8UIszHFpJ762CbHaCmuaPdka7ey2fId8WTx2T7gbT26HXy03VQBxSJ4/Jtb3\n68FJFcvrAgMBAAECggEAV8GJuv+Unbkx1/iaiIsZbG7lZXVS/jCgr0F0MIMRHhLn\nQYrJ/h4IRqe68K5ZJUNN9MRm3eBAQjHM+OVBUlbV/2nBH9JB8jQyxORX6u8XAWC4\n1lWZ3amUxzouMV+qkK/FjqZgkIaruQJCI6zQoe6OakU43gN/8t7KImdR5dUDAkzW\n/aPFcmX/UwuBdrfbH2y5vonH4aZhaSmv00SYU6sj3/Rr+0i18jkVpKsQ78bWTgmn\n72pPfbtwVjJJSYR+sCT19NRVu60JExV44NrlsRcdLMY7kXRmiCujE4HbQYn9pHM4\nbpnK/WRHQQ3vnCRM7gnhSDw7GVOwJ+2yT+vvX0WzmQKBgQD1P2/z/yaRFS+n33Fu\nFhsnkJ4+XjmlE63/7ZMbBtTW4LvwTrvit/GptUqqGJs1NrzBUhun86Zc+OvILFxs\nShKVryw6qQs3vK9bV87yFnt1ancZeK+ZCPpjJJJ8RzSJ9mpTB0WO/4sr7a3aSPh4\nWagXfZXDsgTqhNINF9bkqw6xpwKBgQDvr5kgvYgF1Ev56YTAJz+vjMNHZbftrf1N\n8Z0AmdlzzNm+4mUv1yKsrnCpwFox+ZJ2brzoZCSvzJ61y2ZHasSHHKNKP3uFc9wi\nBEv26xC0Dn6XUlVqxd0paWf2UlGBxZryIHAzdaXMXi71J6dL2IGltv4NAqb7WUvs\nuMzsxjR0HQKBgHt3voMWd3IfOmjHgzGrC2y10BUSFu9WowjvsFmw7MJpTfTDjq+r\nb4zC6p4L2UfHEOw6zBWYAq9X2kximP0jpYuaLygxJqae5aGU6WjTjMAmI2O9cJoY\n/QWgyearanXyisDWLly5pnUtKZN1nTHp4UhCP33QR81RpPZWhCeHPtSNAoGBAOOW\ndCsvbHpEhEPv5TpjykgRu9cOkeAgxpX9JtxMObuINvXWmMgdWnJnTNkSqVIsrVLB\ngaSUenVnMQhj82E60xOMMMyujMZCJjMyq0LxHzIpVTCwYCT7bi4FRU8SCQzVKnRg\nMsnaGy17/NCR73vIQAqvQHnwG8gsmThUnVjyNxpNAoGBAJEsw+xST6bhXYZ9uAG4\nBm22+fSZ3gMfJ1xtuQ28Mf1DEc9Ple3NUDqwbt76jH1wRAUpPLnj2MfchWFfwkRe\nWYphXWq3LQVf0iSc+WFE/Pccmd7HbDAbyQ7ilg0b+v4Ax+ySomRUDsulrMBSAPQF\nwsn32yWO3eE9+YWrmI2rioOR\n-----END PRIVATE KEY-----\n",
+    "client_email": "rebecca@gu-dining-locations.iam.gserviceaccount.com",
+    "client_id": "112774679318587024769",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rebecca%40gu-dining-locations.iam.gserviceaccount.com"
+}
