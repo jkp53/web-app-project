@@ -3,7 +3,10 @@
 
 {% block content %}
 
+
 <h1>Review for {{location_id}} </h1>
+
+
 <br>
 
 <form method="POST" action="/reviewconfirmation" style="display: inline;">
@@ -19,6 +22,7 @@
         <option value="5">5</option>
     </select>
     <input type="hidden" name="location_id" value="{{ location_id }}">
+    <input type="hidden" name="taste_score" value="{{ taste_score}}">
     <br>
     <h3>
         <small class="text-muted">Health Rating</small>
