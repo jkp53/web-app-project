@@ -21,13 +21,12 @@ def index():
 #@home_routes.route("/leaveareview")
 def reviewpage(location_id):
     print("You reached the review page...")
-    print("You chose" + str(location_id))
+    print("You chose location " + str(location_id))
     return render_template("review2.html", location_id=location_id)
 
 @home_routes.route("/reviewconfirmation", methods=["POST"])
 def confirm():
-    print("CREATE USER ORDER...")
-
+    print("You submitted a review!")
     form_data = dict(request.form)
     print("FORM DATA:", form_data)
     return redirect("/")

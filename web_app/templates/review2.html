@@ -3,18 +3,63 @@
 
 {% block content %}
 
-
+<h1>Review for {{location_id}} </h1>
+<br>
 
 <form method="POST" action="/reviewconfirmation" style="display: inline;">
-    <label for="cars">Choose a car:</label>
-    <select name="cars" id="cars" form="carform">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
+    <h3>
+        <small class="text-muted">Taste Rating</small>
+    </h3>
+    <label for="tastescore">Select rating:</label>
+    <select name="tastescore" id="tastescore" form="tasteform">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
     </select>
     <input type="hidden" name="location_id" value="{{ location_id }}">
-    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    <br>
+    <h3>
+        <small class="text-muted">Health Rating</small>
+    </h3>
+    <label for="healthscore">Select rating:</label>
+    <select name="healthscore" id="healthscore" form="healthform">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br>
+    <h3>
+        <small class="text-muted">Service Rating</small>
+    </h3>
+    <label for="servicescore">Select rating:</label>
+    <select name="servicescore" id="servicescore" form="serviceform">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br>
+    <h3>
+        <small class="text-muted">Portion Size</small>
+    </h3>
+    <label for="portionscore">Select rating:</label>
+    <select name="portionscore" id="portionscore" form="portionform">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br>
+    <div style="text-align: center">
+        <button type="submit" class="btn btn-primary">Submit review</button>
+    </div>
+
 </form>
 
 {% endblock %}
