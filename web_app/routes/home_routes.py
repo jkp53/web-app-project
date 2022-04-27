@@ -1,7 +1,8 @@
 # web_app/routes/home_routes.py
 
 from flask import Blueprint, request, render_template
-from web_app.reviews import locations
+from web_app.reviewaggregation import locations
+from web_app.review_submit import review_upload
 
 home_routes = Blueprint("home_routes", __name__)
 
@@ -26,6 +27,7 @@ def confirm():
     print("You submitted a review!")
     form_data = dict(request.form)
     print("FORM DATA:", form_data)
+    review_upload(form_data)
     return render_template("confirmation.html")
 
 

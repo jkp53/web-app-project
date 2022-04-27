@@ -6,10 +6,8 @@
 
 # reading environment vars:
 python-dotenv
-pgeocode
 pandas
 requests
-sendgrid==6.6.0
 
 # web application:
 flask
