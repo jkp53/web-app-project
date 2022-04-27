@@ -15,10 +15,10 @@ def index():
 #@home_routes.route("/leaveareview")
 def reviewpage(location_id):
     print("You reached the review page...")
-    for location in locations:
-        if location["location_id"] == str(location_id):
-            #location_name == location["location_name"]
-            print("You chose to review " + location["location_name"])
+    #for location in locations:
+    #    if location["location_id"] == str(location_id):
+    #        #location_name == location["location_name"]
+    #        print("You chose to review " + location["location_name"])
     return render_template("review2.html", location_id=location_id)
 
 @home_routes.route("/reviewconfirmation", methods=['GET','POST'])
