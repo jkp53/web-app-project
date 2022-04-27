@@ -3,6 +3,8 @@
 # Google sheets import code adapted from https://www.youtube.com/watch?v=cnPlKLEGR7E
 
 import gspread
+import os
+from dotenv import load_dotenv
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
 from web_app.locations import locations
