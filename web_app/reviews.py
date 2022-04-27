@@ -5,7 +5,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
-from locations import locations
+from web_app.locations import locations
 
 import pandas as pd
 

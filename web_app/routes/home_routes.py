@@ -1,7 +1,7 @@
 # web_app/routes/home_routes.py
 
 from flask import Blueprint, request, render_template
-from web_app.locations import locations
+from web_app.reviews import locations
 
 home_routes = Blueprint("home_routes", __name__)
 
