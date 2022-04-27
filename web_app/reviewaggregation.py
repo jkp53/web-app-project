@@ -10,8 +10,7 @@ import pandas as pd
 
 load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
 
-DOCUMENT_ID = os.getenv("GOOGLE_SHEET_ID", default="OOPS, PLEASE SET Google Sheet ID")
-SHEET_NAME = os.getenv("REVIEWS_SHEET_NAME", default="dining_reviews")
+DOCUMENT_ID = os.getenv("GOOGLE_SHEET_ID", default="1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg")
 
 # an OS-agnostic (Windows-safe) way to reference the "auth/google-credentials.json" filepath:
 CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__),"..", "auth", "google-credentials.json")
@@ -24,21 +23,13 @@ AUTH_SCOPE = [
 def fetch_locations():
     credentials = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILEPATH, AUTH_SCOPE)
     client = gspread.authorize(credentials)
-
     doc = client.open_by_key(DOCUMENT_ID)
+
     locations_sheet = doc.worksheet("dining_locations")
-
     locations = locations_sheet.get_all_records()
-
-
-    #print("CREDS:", type(credentials)) #> <class 'oauth2client.service_account.ServiceAccountCredentials'>
-
     reviews_sheet = doc.worksheet("dining_reviews")
-
-
-
-    # List of dictionaries (all values corresponsing to the csv file)
     reviews = reviews_sheet.get_all_records()
+
     for location in locations:
         overall_score_list = []
         for review in range (0, len(reviews)):
