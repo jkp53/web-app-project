@@ -18,15 +18,14 @@ client2 = gspread.authorize(creds2)
 workbook2 = client2.open("Georgetown Dining Reviews Data").sheet1
 
 # List of dictionaries (all values corresponsing to the csv file)
-data2 = workbook2.get_all_records()
+reviews = workbook2.get_all_records()
 
-average_score_list = []
 for location in locations:
     overall_score_list = []
-    for review in range (0, len(data2)):
-        if data2[review]["location_id"]==location["location_id"]:
-            overall_review_score = (data2[review]["taste_score"]+data2[review]["health_score"]+data2[review]["service_score"]+data2[review]["portion_score"])/4
+    for review in range (0, len(reviews)):
+        if reviews[review]["location_id"]==location["location_id"]:
+            overall_review_score = (reviews[review]["taste_score"]+reviews[review]["health_score"]+reviews[review]["service_score"]+reviews[review]["portion_score"])/4
             overall_score_list.append(overall_review_score)
     average_overall_score = sum(overall_score_list)/len(overall_score_list)
-    average_score_list.append(average_overall_score)
-print(average_score_list)
+    location.update(rating=average_overall_score)
+print(locations)

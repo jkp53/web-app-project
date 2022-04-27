@@ -1,7 +1,6 @@
 {% extends "bootstrap_5_layout.html" %}
 {% set active_page = "homepage" %}
 
-
 {% block content %}
 
     <h1>Georgetown Campus Dining Reviews</h1>
@@ -17,6 +16,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ location.location_name }}</h5>
                         <p class="card-text">{{ location.location_hours }}</p>
+                        <p class="card-text">Rating: {{ location.rating }}</p>
                         <!--a href="/leaveareview?location_id={{ location.location_id}}" class="btn btn-primary">Leave a review </a-->
                         <a href="/leaveareview/{{location.location_id}}" class="btn btn-primary">Leave a review </a>
                     </div>
