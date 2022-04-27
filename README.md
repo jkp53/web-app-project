@@ -46,23 +46,6 @@ python -m app.weather_service
 APP_ENV="production" COUNTRY_CODE="US" ZIP_CODE="20057" python -m app.weather_service
 ```
 
-Sending an example email (to test the SendGrid service):
-
-```sh
-python -m app.email_service
-```
-
-> NOTE: the SendGrid emails might first start showing up in spam, until you designate them as coming from a trusted source (i.e. "Looks Safe")
-
-Sending the weather forecast in an email:
-
-```sh
-python -m app.daily_briefing
-
-# in production mode:
-APP_ENV="production" COUNTRY_CODE="US" ZIP_CODE="20057" python -m app.daily_briefing
-```
-
 
 ## Testing
 ## [Deploying](/DEPLOYING.md)

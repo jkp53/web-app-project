@@ -26,6 +26,6 @@ for location in locations:
         if reviews[review]["location_id"]==location["location_id"]:
             overall_review_score = (reviews[review]["taste_score"]+reviews[review]["health_score"]+reviews[review]["service_score"]+reviews[review]["portion_score"])/4
             overall_score_list.append(overall_review_score)
-    average_overall_score = sum(overall_score_list)/len(overall_score_list)
+    average_overall_score = round(sum(overall_score_list)/len(overall_score_list),1)
     location.update(rating=average_overall_score)
-print(locations)
+#print(locations)
