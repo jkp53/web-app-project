@@ -1,7 +1,7 @@
 # web_app/routes/home_routes.py
 
 from flask import Blueprint, request, render_template
-from web_app.reviewaggregation import locations
+from web_app.reviewaggregation import fetch_locations
 from web_app.review_submit import review_upload
 
 home_routes = Blueprint("home_routes", __name__)
@@ -10,6 +10,7 @@ home_routes = Blueprint("home_routes", __name__)
 @home_routes.route("/homepage")
 def index():
     print("You reached the homepage...")
+    locations = fetch_locations()
     return render_template("homepage.html", locations=locations)
 
 @home_routes.route("/leaveareview/<int:location_id>")
