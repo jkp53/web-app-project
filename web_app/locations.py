@@ -15,3 +15,5 @@ client = gspread.authorize(creds)
 workbook1 = client.open("Georgetown Dining Locations Data").sheet1
 
 locations = workbook1.get_all_records()
+
+print(locations)
