@@ -20,3 +20,6 @@ Authlib==1.0.0
 #enable google sheets reading and authentication
 gspread
 oauth2client
+
+#for testing
+pytest
