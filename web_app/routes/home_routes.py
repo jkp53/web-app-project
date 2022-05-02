@@ -16,14 +16,9 @@ def index():
 @home_routes.route("/leaveareview/<int:location_id>")
 #@home_routes.route("/leaveareview")
 def reviewpage(location_id):
-    print("You reached the review page...")
-    #for location in locations:
-    #    if location["location_id"] == str(location_id):
-    #        #location_name == location["location_name"]
-    #        print("You chose to review " + location["location_name"])
     locations = fetch_locations()
     location_name = locations[location_id-1]["location_name"]
-    print(location_name)
+    print("You reached the review page...")
     return render_template("review2.html", location_id=location_id, locations=locations, location_name=location_name)
 
 @home_routes.route("/reviewconfirmation", methods=['GET','POST'])
@@ -33,8 +28,5 @@ def confirm():
     print("FORM DATA:", form_data)
     review_upload(form_data)
     return render_template("confirmation.html")
-
-
-    # web_app/routes/home_routes.py
 
 # ...
