@@ -21,6 +21,13 @@ AUTH_SCOPE = [
 ]
 
 def fetch_locations():
+    """
+This function connects to the google sheet in the backend and fetches all the locations and review data
+from the google sheet. It then calculatees the overall score for each review for every location and
+averages them to get each location's rating. The user doesn't have to invoke this function.
+It is called automatically when the homepage is loaded. It also is called when a user clicks to leave a review, because the locations need
+to be fetched to pull the name of the selected See the home_routes.py file to see where it is used.
+    """
     credentials = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILEPATH, AUTH_SCOPE)
     client = gspread.authorize(credentials)
     doc = client.open_by_key(DOCUMENT_ID)
