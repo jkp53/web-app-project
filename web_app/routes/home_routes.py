@@ -21,7 +21,10 @@ def reviewpage(location_id):
     #    if location["location_id"] == str(location_id):
     #        #location_name == location["location_name"]
     #        print("You chose to review " + location["location_name"])
-    return render_template("review2.html", location_id=location_id)
+    locations = fetch_locations()
+    location_name = locations[location_id-1]["location_name"]
+    print(location_name)
+    return render_template("review2.html", location_id=location_id, locations=locations, location_name=location_name)
 
 @home_routes.route("/reviewconfirmation", methods=['GET','POST'])
 def confirm():
