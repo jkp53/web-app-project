@@ -35,15 +35,14 @@ on the review 2 page. See the home_routes.py file to see where it is used.
 
     doc = client.open_by_key(DOCUMENT_ID)
     sheet = doc.worksheet(SHEET_NAME)
-
-    rows_count_before = len(sheet)
+    rows_count_before = len(sheet.get_all_values())
 
     new_reviews = list(form_data.values())
     integer_reviews = list(map(int, new_reviews))
     sheet.insert_row(integer_reviews,2)
 
-    rows_count_after = len(sheet)
+    rows_count_after = len(sheet.get_all_values())
 
+    row_difference = rows_count_after - rows_count_before
 
-
-    return rows_count_after, rows_count_before
+    return row_difference

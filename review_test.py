@@ -1,5 +1,5 @@
-#from web_app.review_submit import review_upload
+from web_app.review_submit import review_upload
 
-#def test_if_new_row_created_for_review(form_data):
-
-#    assert review_upload(form_data)
+def test_if_new_row_created_for_review():
+    form_data_test = {"location_id":"1", "taste_score":"3", "health_score":"3", "service_score":"3","portion_score":"3"}
+    assert review_upload(form_data_test) == 1
