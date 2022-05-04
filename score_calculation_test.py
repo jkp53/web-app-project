@@ -1,3 +1,5 @@
+# This is the "score_calculation_test.py" file..
+
 from web_app.reviewaggregation import fetch_locations
 
 #this tests whether the function fetch_locations is working
