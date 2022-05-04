@@ -40,6 +40,7 @@ Create a new file called ".env" in the root directory of this repo, and paste th
 DOCUMENT_ID="________"
 ```
 
+
 Create Google Credentials:
 
 Navigate to [Google Cloud Console](https://console.cloud.google.com) and sign into your account. In the dashboard, create a new project. Then, navigate to "APIs and Services" and search for and the enable the following API'S in the Market Place: "Google Sheets API" and "Google Drive API"
@@ -63,17 +64,12 @@ Finally, navigate to your google sheet, change share settings to "Anyone with th
 
 Google Sheets Format:
 
-## Usage
+Create two sheets named, "dining_locations" and "dining reviews".
 
-Printing today's weather forecast (to test the Weather.gov API):
+Within the "dining_locations" sheet add the following column headers: "location_id", "location_name", "location_hours", "location_logo_url"
+Within the "dining_reviews" sheet add the following column headers: "location_id", "taste_score", "health_score", "service_score", "portion_score"
 
-```sh
-python -m app.weather_service
-
-# in production mode:
-APP_ENV="production" COUNTRY_CODE="US" ZIP_CODE="20057" python -m app.weather_service
-```
-
+Input desired variables in each column.
 
 ## Testing
 
@@ -87,12 +83,19 @@ pytest
 
 Follow the deployment instructions to deploy the app to a remote server.
 
-Maybe add some env variable specific information
+Specifically when configuring the server on heroku, include the following environment variables:
 
+```sh
+DOCUMENT_ID="______"
+#google sheet API key found in the url
+```
 
-## [License](/LICENSE.md)
+```sh
+CREDENTIALS_FILEPATH="_______"
+#copy and paste all the contents found within your downloaded json file
+```
 
-## Web App Commands
+## Server Commands
 
 Run the following code in terminal to start your server:
 
@@ -101,7 +104,16 @@ FLASK_APP=web_app flask run
 #or store the FLASK_APP=web_app in your .env file and then you can just paste 'flask run'
 ```
 
+Run the following code in terminal to shut down your server:
 ```sh
 ^C
-#shut down local server
 ```
+
+## Web App
+
+Visit your web app using the Heroku generated url. To see an example, visit our [Georgetown Campus Dining Reviews Web App](https://dining-location-reviews-app.herokuapp.com/)!
+
+
+## [License](/LICENSE.md)
+
+Copyright (c) 2015-2022 [John Picker](mailto:jkp53@georgetown.edu).
