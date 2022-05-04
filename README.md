@@ -1,4 +1,4 @@
-# web-app-project
+# Web App Project
 
 A Completed Repository for the [The Self-Directed "Freestyle" Project](https://github.com/prof-rossetti/intro-to-python/tree/main/projects/freestyle).
 
