@@ -80,3 +80,9 @@ git push heroku main
 > NOTE: any time you update your source code, you can repeat this deployment command to upload your new code onto the server
 
 ## Viewing your Web App on the Heroku server
+After you push your code to the heroku server, you will see near the bottom of a line of code that looks something like:
+
+```sh
+remote: https://dining-location-reviews-app.herokuapp.com/ deployed to Heroku
+```
+The url is where your web app lives on the internet. Feel free to cpy and paste this in the browser of your choice to view your web app which is now live on the internet!

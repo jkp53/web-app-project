@@ -31,30 +31,40 @@ pip install -r requirements.txt
 
 ## Configuration
 
-#the locations and review data is stored on a google sheet at the following [link](https://docs.google.com/spreadsheets/d/1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg/edit#gid=883497855)
+First, you will need to create and download Google API credentials. To do so, follow the instructions below:
 
-Create a new file called ".env" in the root directory of this repo, and paste the following contents inside. These are example contents for the ".env" file:
+Visit the [Google Developer Console](https://console.developers.google.com/cloud-resource-manager). Create a new project, or select an existing one. Click on your project, then from the project page, search for the "Google Sheets API" and enable it. Also search for the "Google Drive API" and enable it.
+
+From either API page, or from the [API Credentials](https://console.developers.google.com/apis/credentials) page, follow a process to create and download credentials to use the APIs:
+  1. Click "Create Credentials" for a "Service Account". Follow the prompt to create a new service account named something like "spreadsheet-service", and add a role of "Editor".
+  2. Click on the newly created service account from the "Service Accounts" section, and click "Add Key" to create a new "JSON" credentials file for that service account. Download the resulting .json file (this might happen automatically).
+  3. Rename the file "google-credentials.json". Then move a copy of the credentials file into your project repository.
+
+Ensure that your repository's '.gitignore' file contains the following code so that your personal credentials do not get tracked in version control or uploaded to GitHub:
 
 ```sh
-# this is the ".env" file... with environment variables
-#the google sheet ID can be found in the url of the google sheet that stores the loaction and review data
+google-credentials.json
+*.json
+```
+
+Next, create a '.env' file in your project repository. You should create a new environment variable called `GOOGLE_SHEET_ID` and set it equal to `"1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg"`.
+
+Your '.env' file should look something like this:
+```sh
 GOOGLE_SHEET_ID="1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg"
 ```
 
+Add `.env` and `__pycache__` to your `.gitignore` file if they are not there already. Save your .env and .gitignore files.
 
-Create Google Credentials:
+Your '.gitignore' file should now look something like this:
+```sh
+google-credentials.json
+*.json
+.env
+__pycache__
+```
 
-Navigate to [Google Cloud Console](https://console.cloud.google.com) and sign into your account. In the dashboard, create a new project. Then, navigate to "APIs and Services" and search for and the enable the following API'S in the Market Place: "Google Sheets API" and "Google Drive API"
-
-Specicifally manage the Google Drive API by creating your own credentials.
-
-    1. What API are you using? > Google Drive API
-    2. Where will you be calling your API from? > Web Server
-    3. What data will you be accessing? > Application Data
-    4. Select Role > Project > Editor
-    5. Key Type > JSON
-
-Move the dowloaded json file into the root directory of this repo. Then rename the file to "google-credentials.json".
+FYI, the locations and review data is stored on a google sheet at the following [link](https://docs.google.com/spreadsheets/d/1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg/edit#gid=883497855). If you want to have your own data imitating the template we have linked above, with the same sheet names and column headers.
 
 ## Testing
 
@@ -66,7 +76,7 @@ pytest
 
 ## [Deploying](/DEPLOYING.md)
 
-Follow the deployment instructions if you would like to deploy the app on oyur own remote server.
+Follow the deployment instructions if you would like to deploy the app on your own remote server.
 
 ## Server Commands
 
