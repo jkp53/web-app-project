@@ -31,13 +31,14 @@ pip install -r requirements.txt
 
 ## Configuration
 
-Create a new file called ".env" in the root directory of this repo, and paste the following contents inside, using your own values as appropriate. These are example contents for the ".env" file:
+#the locations and review data is stored on a google sheet at the following [link](https://docs.google.com/spreadsheets/d/1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg/edit#gid=883497855)
+
+Create a new file called ".env" in the root directory of this repo, and paste the following contents inside. These are example contents for the ".env" file:
 
 ```sh
 # this is the ".env" file... with environment variables
-
-#this is your google sheet specific API key in the url
-DOCUMENT_ID="________"
+#the google sheet ID can be found in the url of the google sheet that stores the loaction and review data
+GOOGLE_SHEET_ID="1ciNHuyNCIMAYaBFQDNCykwwdWVEZwr2Uo8TnkHcO2Qg"
 ```
 
 
@@ -45,7 +46,7 @@ Create Google Credentials:
 
 Navigate to [Google Cloud Console](https://console.cloud.google.com) and sign into your account. In the dashboard, create a new project. Then, navigate to "APIs and Services" and search for and the enable the following API'S in the Market Place: "Google Sheets API" and "Google Drive API"
 
-Specicifally manage the Google Drive API by creating your own credentials. 
+Specicifally manage the Google Drive API by creating your own credentials.
 
     1. What API are you using? > Google Drive API
     2. Where will you be calling your API from? > Web Server
@@ -53,23 +54,7 @@ Specicifally manage the Google Drive API by creating your own credentials.
     4. Select Role > Project > Editor
     5. Key Type > JSON
 
-Move the dowloaded json file into the root directory of this repo and replace the json file name in the following python files: "review_submit.py" and "reviewaggregation.py". The change occurs in the following line of code:
-
-```sh
-CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__),"..", "google-credentials.json")
-```
-
-Finally, navigate to your google sheet, change share settings to "Anyone with the link", and share the document with the generated "client_email" found within the downloaded json file.
-
-
-Google Sheets Format:
-
-Create two sheets named, "dining_locations" and "dining reviews".
-
-Within the "dining_locations" sheet add the following column headers: "location_id", "location_name", "location_hours", "location_logo_url"
-Within the "dining_reviews" sheet add the following column headers: "location_id", "taste_score", "health_score", "service_score", "portion_score"
-
-Input desired variables in each column.
+Move the dowloaded json file into the root directory of this repo. Then rename the file to "google-credentials.json".
 
 ## Testing
 
@@ -81,30 +66,18 @@ pytest
 
 ## [Deploying](/DEPLOYING.md)
 
-Follow the deployment instructions to deploy the app to a remote server.
-
-Specifically when configuring the server on heroku, include the following environment variables:
-
-```sh
-DOCUMENT_ID="______"
-#google sheet API key found in the url
-```
-
-```sh
-CREDENTIALS_FILEPATH="_______"
-#copy and paste all the contents found within your downloaded json file
-```
+Follow the deployment instructions if you would like to deploy the app on oyur own remote server.
 
 ## Server Commands
 
-Run the following code in terminal to start your server:
+Run the following code in terminal to run the web app on your local computer:
 
 ```sh
 FLASK_APP=web_app flask run
 #or store the FLASK_APP=web_app in your .env file and then you can just paste 'flask run'
 ```
 
-Run the following code in terminal to shut down your server:
+Run the following code in terminal to shut down your local server:
 ```sh
 ^C
 ```

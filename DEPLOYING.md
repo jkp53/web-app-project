@@ -49,21 +49,24 @@ Instead of using a ".env" file, we will directly configure the server's environm
 heroku config # at this time, results might be empty-ish
 
 # set environment variables:
+
+#set APP environment variable to production
 heroku config:set APP_ENV="production"
 
-heroku config:set SENDGRID_API_KEY="_________"
-heroku config:set SENDER_EMAIL_ADDRESS="someone@gmail.com"
+#this is the same thing that you set for your .env file
+heroku config:set GOOGLE_SHEET_ID = "_________"
 
-heroku config:set COUNTRY_CODE="US"
-heroku config:set ZIP_CODE="20057"
-heroku config:set USER_NAME="Jon Snow"
+#you will need to copy the entire contents from your google-credentials.json file and paste them to configure the GOOGLE_CREDENTIALS environment variable
+heroku config:set GOOGLE_CREDENTIALS = "_______"
+
+
 ```
-
 At this point, you should be able to verify the production environment has been configured with the proper environment variable values:
 
 ```sh
 heroku config
 ```
+
 
 ## Deploying
 
@@ -76,17 +79,4 @@ git push heroku main
 
 > NOTE: any time you update your source code, you can repeat this deployment command to upload your new code onto the server
 
-## Running the Script in Production
-
-Once you've deployed the source code to the Heroku server, login to the server to see the files there, and take an opportunity to test your ability to run the script that now lives on the server:
-
-```sh
-heroku run bash # login to the server
-# ... whoami # see that you are not on your local computer anymore
-# ... ls -al # optionally see the files, nice!
-# ... python -m app.daily_briefing # see the output, nice!
-# ... exit # logout
-
-# or alternatively, run it from your computer, in "detached" mode:
-heroku run "python -m app.daily_briefing"
-```
+## Viewing your Web App on the Heroku server

@@ -18,7 +18,6 @@ on the review 2 page. See the home_routes.py file to see where it is used.
     load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
 
     DOCUMENT_ID = os.getenv("GOOGLE_SHEET_ID", default="OOPS, PLEASE SET Google Sheet ID")
-    SHEET_NAME = os.getenv("REVIEWS_SHEET_NAME", default="dining_reviews")
 
     # an OS-agnostic (Windows-safe) way to reference the "auth/google-credentials.json" filepath:
     CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__),"..", "google-credentials.json")
@@ -34,7 +33,7 @@ on the review 2 page. See the home_routes.py file to see where it is used.
     client = gspread.authorize(credentials)
 
     doc = client.open_by_key(DOCUMENT_ID)
-    sheet = doc.worksheet(SHEET_NAME)
+    sheet = doc.worksheet("dining_reviews")
     rows_count_before = len(sheet.get_all_values())
 
     new_reviews = list(form_data.values())
