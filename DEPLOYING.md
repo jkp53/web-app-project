@@ -34,6 +34,7 @@ Also verify this step has associated the local repo with a remote address called
 git remote -v
 ```
 
+
 ## Server Configuration
 
 Before we copy the source code to the remote server, we need to configure the server's environment in a similar way we configured our local environment.
@@ -66,6 +67,11 @@ At this point, you should be able to verify the production environment has been 
 ```sh
 heroku config
 ```
+
+Now login to heroku on the web and go to your project. First, on the Overview tab under 'Dyno formation', you want to add the following code: `gunicorn "web_app:create_app()"`. Next, Navigate to settings and then find buildpacks. You will need to add two buildbacks, for the app to run properly. Add the `heroku/python` app and then add another buildpack by pasting the following url: `https://github.com/s2t2/heroku-google-application-credentials-buildpack`
+
+
+
 
 
 ## Deploying
