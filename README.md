@@ -31,21 +31,16 @@ pip install -r requirements.txt
 
 ## Configuration
 
-Create a new file called ".env" in the root directory of this repo, and paste the following contents inside, using your own values as appropriate. These are example contents for the ".env" file:
+First, you will need to create and download Google API credentials. To do so, follow the instructions below:
 
-```sh
-# this is the ".env" file... with environment variables
+Visit the [Google Developer Console](https://console.cloud.google.com). Create a new project, or select an existing one. Click on your project, then from the project page, search for the "Google Sheets API" and enable it. Also search for the "Google Drive API" and enable it.
 
-#this is your google sheet specific API key in the url
-DOCUMENT_ID="________"
-```
+From either API page, or from the [API Credentials](https://console.cloud.google.com/apis/credentials) page, follow a process to create and download credentials to use the APIs:
+  1.  Click "Create Credentials" for a "Service Account". Follow the prompt to create a new service account named something like "spreadsheet-service", and add a role of "Editor"
+  2.  Click the newly created service account from the "Service Accounts" section, and click "Add Key" to cerate a new "JSON" credentials file for that service account. Download the resulting .json file (this might happen automatically).
+  3.  Rename the file "google-credentials.json". Then move a copy of the credentials file into your project repository.
 
-
-Create Google Credentials:
-
-Navigate to [Google Cloud Console](https://console.cloud.google.com) and sign into your account. In the dashboard, create a new project. Then, navigate to "APIs and Services" and search for and the enable the following API'S in the Market Place: "Google Sheets API" and "Google Drive API"
-
-Specicifally manage the Google Drive API by creating your own credentials. 
+Specifically manage the Google Drive API by creating your own credentials. 
 
     1. What API are you using? > Google Drive API
     2. Where will you be calling your API from? > Web Server
@@ -61,6 +56,15 @@ CREDENTIALS_FILEPATH = os.path.join(os.path.dirname(__file__),"..", "google-cred
 
 Finally, navigate to your google sheet, change share settings to "Anyone with the link", and share the document with the generated "client_email" found within the downloaded json file.
 
+
+Create a new file called ".env" in the root directory of this repo, and paste the following contents inside, using your own values as appropriate. These are example contents for the ".env" file:
+
+```sh
+# this is the ".env" file... with environment variables
+
+#this is your google sheet specific API key in the url
+DOCUMENT_ID="________"
+```
 
 Google Sheets Format:
 
@@ -116,4 +120,4 @@ Visit your web app using the Heroku generated url. To see an example, visit our 
 
 ## [License](/LICENSE.md)
 
-Copyright (c) 2015-2022 [John Picker](mailto:jkp53@georgetown.edu).
+Copyright (c) 2015-2022 [Rebecca Fernandez](mailto:rmf83@georgetown.edu).
